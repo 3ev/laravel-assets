@@ -1,6 +1,7 @@
 <?php
 namespace Tev\Assets\Providers;
 
+use Tev\Assets\Loader;
 use Illuminate\Support\ServiceProvider;
 
 /**
