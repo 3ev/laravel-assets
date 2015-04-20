@@ -1,0 +1,42 @@
+
+{
+    "name": "3ev/laravel-assets",
+
+    "description": "3ev's interal Laravel asset helpers",
+
+    "homepage": "https://github.com/3ev/laravel-assets",
+
+    "type": "library",
+
+    "authors": [
+        {
+            "name": "3ev",
+            "homepage": "http://www.3ev.com/",
+            "role": "Developer"
+        }
+    ],
+
+    "require": {
+        "laravel/framework": "~5.0"
+    },
+
+    "autoload": {
+        "psr-4": {
+            "Tev\\": "src/Tev/"
+        },
+
+        "files": [
+            "src/helpers.php"
+        ]
+    },
+
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.x-dev"
+        }
+    },
+
+    "config": {
+        "bin-dir": "bin"
+    }
+}
