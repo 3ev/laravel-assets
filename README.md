@@ -22,10 +22,16 @@ return [
 ];
 ```
 
+and publish the package config:
+
+```$
+$ php artisan vendor:publish --provider="Tev\Assets\Providers\AssetsServiceProvider"
+```
+
 ## Usage
 
-The default service provider sets up assets to be loaded from
-`public/build/assets/`, with the revision manifest file (from [gulp-rev](https://github.com/sindresorhus/gulp-rev))
+The default configuration sets up assets to be loaded from `public/build/assets/`,
+with the revision manifest file (from [gulp-rev](https://github.com/sindresorhus/gulp-rev))
 configured at `public/build/assets/rev-manifest.json`.
 
 The library provides a simple helper method which will load a versioned or

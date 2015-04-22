@@ -16,9 +16,22 @@ class AssetsServiceProvider extends ServiceProvider
     {
         $this->app->singleton('Tev\Assets\LoaderInterface', function($app) {
             return new Loader(
-                '/build/assets',
-                public_path() . '/build/assets/rev-manifest.json'
+                config('tev_assets.asset_path'),
+                config('tev_assets.manifest_path'),
+                config('tev_assets.asset_url')
             );
         });
+    }
+
+    /**
+     * Bootstrap services.
+     *
+     * @return void
+     */
+    public function boot()
+    {
+        $this->publishes([
+            __DIR__ . '/../../../config.php' => config_path('tev_assets.php')
+        ]);
     }
 }
