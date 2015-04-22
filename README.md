@@ -24,7 +24,7 @@ return [
 
 and publish the package config:
 
-```$
+```sh
 $ php artisan vendor:publish --provider="Tev\Assets\Providers\AssetsServiceProvider"
 ```
 
