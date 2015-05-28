@@ -56,7 +56,7 @@ class Loader implements LoaderInterface
      */
     public function __construct($assetsPath, $manifestPath, $url = null)
     {
-        $this->assetsPath = $assetsPath;
+        $this->assetsPath = ends_with($assetsPath, '/') ? rtrim($assetsPath, '/') : $assetsPath;
         $this->manifestPath = $manifestPath;
         $this->url = $url;
         $this->manifest = null;
@@ -138,10 +138,12 @@ class Loader implements LoaderInterface
      */
     protected function wrap($path)
     {
+        $path = starts_with($path, '/') ? $path : '/' . $path;
+
         if ($this->url !== null) {
-            return $this->url . $this->assetsPath . '/' . $path;
+            return $this->url . $this->assetsPath . $path;
         }
 
-        return $this->assetsPath . '/' . $path;
+        return $this->assetsPath . $path;
     }
 }
